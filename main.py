@@ -4,6 +4,7 @@ from tkinter import ttk
 from app.textformatters.escape_for_const_variable import EscapeForConstVariable
 from app.textformatters.multiline_to_single_line import MultiLineToSingleLine
 from app.fileformatters.file_to_base64 import FileToBase64
+from app.textformatters.xml_beautifier import XMLBeautifier
 
 class MultiToolApp:
     def __init__(self, root):
@@ -25,7 +26,9 @@ class MultiToolApp:
         FileToBase64(file_to_base64_frame)
         self.notebook.add(file_to_base64_frame, text="File to Base64")
 
-
+        xml_beautifier_frame = tk.Frame(self.notebook)
+        XMLBeautifier(xml_beautifier_frame)
+        self.notebook.add(xml_beautifier_frame, text="XML Beautifier")
 if __name__ == "__main__":
     root = TkinterDnD.Tk() 
     app = MultiToolApp(root)
